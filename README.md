@@ -182,22 +182,4 @@ The application uses JWT (JSON Web Tokens) for authentication. Users must be aut
 1. Build the React application: `cd client && npm run build`
 2. Deploy the build folder to your hosting service
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
-## 🆘 Support
-
-For support and questions, please open an issue in the repository.
-
----
-
 **DecisionDeck** - Making voting accessible, secure, and real-time. 

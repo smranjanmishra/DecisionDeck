@@ -66,6 +66,8 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 .nav-link:hover {
@@ -98,20 +100,16 @@ body {
   margin-bottom: 2rem;
 }
 
-.card-header {
-  margin-bottom: 1.5rem;
-}
-
 .card-title {
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
+  font-weight: 600;
   margin-bottom: 0.5rem;
+  color: #333;
 }
 
 .card-subtitle {
   color: #666;
-  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Button Styles */
@@ -122,9 +120,10 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   text-decoration: none;
-  display: inline-block;
-  text-align: center;
 }
 
 .btn-primary {
@@ -140,11 +139,11 @@ body {
 .btn-secondary {
   background: rgba(255, 255, 255, 0.9);
   color: #333;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.2);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 1);
+  background: rgba(102, 126, 234, 0.1);
   transform: translateY(-2px);
 }
 
@@ -173,11 +172,10 @@ body {
 .form-input {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(102, 126, 234, 0.2);
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
-  background: rgba(255, 255, 255, 0.9);
 }
 
 .form-input:focus {
@@ -192,32 +190,31 @@ body {
   margin-top: 0.25rem;
 }
 
-/* Grid Layouts */
+/* Grid Styles */
 .grid {
   display: grid;
   gap: 2rem;
 }
 
 .grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .grid-4 {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
 }
 
-/* Candidate Card */
+/* Candidate Card Styles */
 .candidate-card {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .candidate-card:hover {
@@ -231,32 +228,32 @@ body {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
-  border: 3px solid #667eea;
+  border: 3px solid rgba(102, 126, 234, 0.2);
 }
 
 .candidate-name {
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 0.5rem;
   color: #333;
 }
 
 .candidate-party {
-  color: #666;
-  font-size: 0.9rem;
+  color: #667eea;
+  font-weight: 500;
   margin-bottom: 0.5rem;
 }
 
 .candidate-description {
-  color: #555;
-  font-size: 0.875rem;
+  color: #666;
+  font-size: 0.9rem;
   line-height: 1.5;
   margin-bottom: 1rem;
 }
 
 .vote-count {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
   color: #667eea;
   margin-bottom: 0.5rem;
 }
@@ -266,11 +263,10 @@ body {
   font-size: 0.875rem;
 }
 
-/* Progress Bar */
 .progress-bar {
   width: 100%;
   height: 8px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(102, 126, 234, 0.1);
   border-radius: 4px;
   overflow: hidden;
   margin-top: 0.5rem;
@@ -279,10 +275,11 @@ body {
 .progress-fill {
   height: 100%;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
   transition: width 0.3s ease;
 }
 
-/* Stats Cards */
+/* Stats Card Styles */
 .stats-card {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
@@ -293,7 +290,7 @@ body {
 
 .stats-number {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 700;
   color: #667eea;
   margin-bottom: 0.5rem;
 }
@@ -301,29 +298,408 @@ body {
 .stats-label {
   color: #666;
   font-size: 0.875rem;
+  font-weight: 500;
 }
 
-/* Loading Spinner */
+/* Loading Styles */
 .loading {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  justify-content: center;
+  padding: 3rem;
 }
 
 .spinner {
   width: 40px;
   height: 40px;
   border: 4px solid rgba(102, 126, 234, 0.1);
-  border-left-color: #667eea;
+  border-left: 4px solid #667eea;
   border-radius: 50%;
   animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Analytics Page Styles */
+.analytics-page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.header-content p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.select-input {
+  padding: 0.5rem 1rem;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 8px;
+  background: white;
+  font-size: 0.9rem;
+  min-width: 150px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.stat-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.stat-content p {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.charts-section {
+  margin-bottom: 2rem;
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.chart-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chart-header {
+  margin-bottom: 1rem;
+}
+
+.chart-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.chart-header p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.top-candidates-section {
+  margin-bottom: 2rem;
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.section-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  color: #666;
+}
+
+.candidates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.candidate-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.candidate-card:hover {
+  transform: translateY(-4px);
+}
+
+.candidate-rank {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.candidate-info h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.candidate-position {
+  color: #667eea;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.candidate-party {
+  color: #666;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.candidate-stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #666;
+  text-align: center;
+}
+
+.realtime-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 2rem;
+}
+
+.realtime-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.realtime-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.status-indicator.connected {
+  background: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+.status-indicator.disconnected {
+  background: #f44336;
+  box-shadow: 0 0 8px rgba(244, 67, 54, 0.5);
+}
+
+.realtime-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.realtime-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.realtime-stat .stat-label {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.realtime-stat .stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.engagement-section {
+  margin-bottom: 2rem;
+}
+
+.engagement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.engagement-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.engagement-card:hover {
+  transform: translateY(-4px);
+}
+
+.engagement-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  margin: 0 auto 1rem;
+}
+
+.engagement-content h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.engagement-content p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  min-height: 400px;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  min-height: 400px;
+  text-align: center;
+}
+
+.error-container h2 {
+  color: #f44336;
+  margin-bottom: 1rem;
 }
 
 /* Responsive Design */
@@ -331,25 +707,77 @@ body {
   .main-content {
     padding: 1rem;
   }
-  
+
   .nav-container {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
   .grid-2,
   .grid-3,
   .grid-4 {
     grid-template-columns: 1fr;
   }
-  
+
   .card {
     padding: 1.5rem;
+  }
+
+  .analytics-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-content h1 {
+    font-size: 2rem;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .action-buttons {
+    justify-content: center;
+  }
+
+  .overview-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-row {
+    grid-template-columns: 1fr;
+  }
+
+  .candidates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .engagement-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .realtime-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .candidate-stats {
+    justify-content: center;
   }
 }
 
@@ -370,7 +798,7 @@ body {
 }
 
 .slide-up {
-  animation: slideUp 0.3s ease-out;
+  animation: slideUp 0.5s ease-out;
 }
 
 @keyframes slideUp {

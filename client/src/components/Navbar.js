@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { FaUser, FaSignOutAlt, FaCog, FaChartBar } from 'react-icons/fa';
+import { FaUser, FaSignOutAlt, FaCog, FaChartBar, FaAnalytics } from 'react-icons/fa';
 
 const Navbar = () => {
   const { user, isAuthenticated, logout, isAdmin } = useAuth();
@@ -36,6 +36,11 @@ const Navbar = () => {
                 Dashboard
               </Link>
               
+              <Link to="/analytics" className="nav-link">
+                <FaAnalytics style={{ marginRight: '0.5rem' }} />
+                Analytics
+              </Link>
+              
               <Link to="/voting" className="nav-link">
                 Vote
               </Link>
@@ -66,6 +71,15 @@ const Navbar = () => {
                     >
                       <FaCog />
                       <span>Profile</span>
+                    </Link>
+                    
+                    <Link
+                      to="/analytics"
+                      className="dropdown-item"
+                      onClick={() => setShowMenu(false)}
+                    >
+                      <FaAnalytics />
+                      <span>Analytics</span>
                     </Link>
                     
                     {isAdmin && (

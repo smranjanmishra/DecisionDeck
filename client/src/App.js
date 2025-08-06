@@ -13,6 +13,7 @@ import Voting from './pages/Voting';
 import Results from './pages/Results';
 import Admin from './pages/Admin';
 import Profile from './pages/Profile';
+import Analytics from './pages/Analytics';
 import './App.css';
 
 function App() {
@@ -44,6 +45,14 @@ function App() {
                   } 
                 />
                 <Route path="/results" element={<Results />} />
+                <Route 
+                  path="/analytics" 
+                  element={
+                    <PrivateRoute>
+                      <Analytics />
+                    </PrivateRoute>
+                  } 
+                />
                 <Route 
                   path="/admin" 
                   element={
